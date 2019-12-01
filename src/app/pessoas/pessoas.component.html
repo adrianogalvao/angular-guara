@@ -1,3 +1,41 @@
 <div *ngFor="let pessoa of pessoas.results">
-  {{pessoa.name}}
+  <table border="1">
+    <tr>
+      <th>
+        Nome
+      </th>
+      <th>
+        Ano de Nascimento
+      </th>
+      <th>
+        Raça
+      </th>
+      <th>
+        Sexo
+      </th>
+      <th>
+        Planeta Natal
+      </th>      
+    </tr>
+    <tr>      
+      <th>
+        {{pessoa.name}}
+      </th>
+      <th>
+        {{pessoa.birth_year}}
+      </th>
+      <th>
+        {{pessoa.species}}
+      </th>
+      <th>
+        {{pessoa.gender}}
+      </th>
+      <th>
+        {{pessoa.homeworld}}
+      </th>            
+    </tr>
+  </table>
 </div>
+<br>
+<button class="">Anterior</button>
+<button class="">Próximo</button>
