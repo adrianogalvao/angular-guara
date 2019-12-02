@@ -1,41 +1,41 @@
 <div *ngFor="let pessoa of pessoas">
   <table border="1">
     <tr>
-      <th>
+      <th width=170>
         Nome
       </th>
-      <th>
+      <th width=100>
         Ano de Nascimento
       </th>
-      <th>
+      <th width=100>
         Raça
       </th>
-      <th>
+      <th width=110>
         Sexo
       </th>
-      <th>
+      <th width=200>
         Planeta Natal
       </th>      
     </tr>
     <tr>      
-      <th>
+      <td>
         {{pessoa.name}}
-      </th>
-      <th>
+      </td>
+      <td>
         {{pessoa.birth_year}}
-      </th>
-      <th>
-        {{pessoa.species}}
-      </th>
-      <th>
+      </td>
+      <td>
+        {{pessoa.specie}}
+      </td>
+      <td>
         {{pessoa.gender}}
-      </th>
-      <th>
-        {{pessoa.homeworld}}
-      </th>            
+      </td>
+      <td>
+        {{pessoa.planeta}}
+      </td>            
     </tr>
   </table>
 </div>
 <br>
-<button class="">Anterior</button>
-<button class="">Próximo</button>
+<button (click)="ngOnPrevPage()" *ngIf="pages.previous">Anterior</button>
+<button (click)="ngOnNextPage()" *ngIf="pages.next">Próximo</button>
