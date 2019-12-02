@@ -19,10 +19,22 @@ export class PessoasComponent implements OnInit {
   getPessoas(){
     this.http.get('https://swapi.co/api/people/').subscribe(
       response => {
-        this.pessoas = response;        
+        this.pessoas = response.results;
         console.log(this.pessoas);
+        for (let i = 0; i < this.pessoas.length; i++) {
+          this.http.get(this.pessoas[i].homeworld).subscribe(
+            response => {
+              this.pessoas[i].homeworld = response.name
+            }
+          );
+          this.http.get(this.pessoas[i].species[0]).subscribe(
+            response => {
+              this.pessoas[i].species = response.name
+            }
+          )         
+        };
       },
       error => { console.log(error) }
     )
-  }
+  }  
 }
